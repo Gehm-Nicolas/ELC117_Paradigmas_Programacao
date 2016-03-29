@@ -17,7 +17,7 @@ spaceNum lis = length (filter (==' ') lis)	--filter: aplica um teste a cada elem
 						--	  produzindo outra lista somente com os elementos
 						--        cujo teste resultar TRUE
 
---5)Calcula a função "3*n^2 + 2/n + 1" para cada elemento (Int) da lista
+--5)Calcula a função "3*n^2 + 2/n + 1" para cada elemento (Float) da lista
 func :: [Float] -> [Float]			
 func lis = map (\n -> 3*n^2 + 2/n + 1) lis 	--Funções Anônimas (Notação LAMBDA)
 
@@ -40,7 +40,7 @@ age1970 ano lis = filter (\n -> 0<n && n<=(ano-1970)) lis
 evenNum :: [Int] -> [Int]
 evenNum lis = filter even lis
 
---10)Verifica se um caracter (1º argumento) está presente em uma String (2º argumento) ***************
+--10)Verifica se um caracter (1º argumento) está presente em uma String (2º argumento)
 charFound :: Char -> String -> Bool
 charFound c s = if null (filter (\n -> c==n) s) then False else True
 
