@@ -58,4 +58,49 @@ semVogaisRec (x:xs)
 	| ((eVogal x) == True) = semVogais(xs)
 	| otherwise	       = x:semVogais(xs)
 
---8)
+--8) Recebe uma STRING, com ou sem espaços, e retorne OUTRA STRING com os caracteres substituidos por '-', mantendo os espaços. SEM recursividade
+password :: Char -> Char
+password c
+	|c==' '    = ' '
+	|otherwise = '-'
+
+codifica :: String -> String
+codifica lis = map password lis
+
+--9) Problema 8, RECURSIVAMENTE
+codificaRec :: String -> String
+codificaRec [] = []
+codificaRec (x:xs)
+	|x==' '    = ' ':codificaRec(xs)
+	|otherwise = '-':codificaRec(xs)
+
+--10)Verifica se um CARACTER está contido na STRING, usando RECURSIVIDADE
+--Diferencia maiúsculas de minúsculas
+charFound :: Char -> String -> Bool
+charFound _ [] = False
+charFound c (x:xs)
+	|c==x      = True
+	|otherwise = charFound c xs
+
+--11)Recebe uma LISTA de coordenadas de pontos 2D e desloca esses pontos em 2 unidades, RECURSIVAMENTE
+add2 :: (Float,Float) -> (Float,Float)
+add2 tupla = (fst tupla +2,snd tupla +2)
+
+translate :: [(Float,Float)] -> [(Float,Float)]
+translate [] = []
+translate (x:xs) = (add2 x:translate xs)
+
+--12)Recebe 2 LISTAS e retorna uma LISTA contendo o produto, par a par, dos elementos das listas de entrada, RECURSIVAMENTE
+prodVetRec :: [Float] -> [Float] -> [Float]
+prodVetRec [] _ = []
+prodVetRec _ [] = []
+prodVetRec lis1 lis2 = ((head lis1)*(head lis2)):prodVetRec (tail lis1) (tail lis2)
+
+--13)Exercício 12, SEM recursão
+prodVet :: [Float] -> [Float] -> [Float]
+prodVet lis1 lis2 = zipWith (*) lis1 lis2
+
+--14)Recebe um NÚMERO N e retorna uma TABELA de números de 1 a n e seus quadrados, RECURSIVAMENTE
+geraTabela :: Int -> [(Int,Int)]
+geraTabela 0 = []
+geraTabela n = (n,n^2):geraTabela(n-1)

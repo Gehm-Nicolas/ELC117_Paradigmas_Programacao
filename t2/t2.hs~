@@ -47,7 +47,7 @@ charFound c s = if null (filter (\n -> c==n) s) then False else True
 --11) Exemplo Funcionamento da função takeWhile
 --takeWhile :: (a -> Bool) -> [a] -> [a]
 --takeWhile (/="Joao") ["Maria","Joaquim","Joao","Tereza"]
---["Maria","Joaquim"]
+--["Maria","Joaquim","Tereza"]
 
 --12)Retorna uma LISTA cujos nomes terminam com a letra 'a', a partir de uma LISTA de nomes dada
 lastA :: String -> Bool 
