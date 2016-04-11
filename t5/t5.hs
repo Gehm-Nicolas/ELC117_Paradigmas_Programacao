@@ -80,15 +80,17 @@ crossProduct lis_a lis_b = pairWithAll (head(lis_a)) lis_b ++ crossProduct (tail
 
 --8)Recebe um NÚMERO N e um PONTO (x,y) e gera uma sequência de retângulos não sobrepostos, usando "List Comprehension"
 --(x,y,largura,altura)
---genRects :: Int -> (Int,Int) -> [(Float,Float,Float,Float)]
---genRects 0 _ = []
---genRects num (a,b) = [(a,b,larg,alt) | ]
---	where x = fromIntegral a
---	      y = fromIntegral b
---	      n = fromIntegral num	
---	      pto_x = x + 
---	      pto_y = 
---	      larg  = 
---	      alt   = 
+genRects :: Int -> (Int,Int) -> [(Float,Float,Float,Float)]
+genRects 0 _ = []
+genRects num (a,b) = [(x + largura*n,y,largura,altura) | n <- [0..(n-1)] ]
+	where x = fromIntegral a
+	      y = fromIntegral b
+	      n = fromIntegral num
+	      altura = 5.0
+	      largura = 5.0	
+	      --calc_x = (x + largura*n)
 
---9)
+--9) Recebe uma LISTA de tuplas e, decompondo cada uma delas, gera-se uma TUPLA de listas, RECURSIVAMENTE
+--func :: [(x,y)] -> ([x],[y])
+--func [] = ([],[])
+--func (x:xs) =  
