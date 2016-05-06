@@ -87,10 +87,11 @@ genRects num (a,b) = [(x + largura*n,y,largura,altura) | n <- [0..(n-1)] ]
 	      y = fromIntegral b
 	      n = fromIntegral num
 	      altura = 5.0
-	      largura = 5.0	
-	      --calc_x = (x + largura*n)
+	      largura = 5.0
 
 --9) Recebe uma LISTA de tuplas e, decompondo cada uma delas, gera-se uma TUPLA de listas, RECURSIVAMENTE
 --func :: [(x,y)] -> ([x],[y])
 --func [] = ([],[])
 --func (x:xs) =  
+
+--10)Exercício 9) usando "list comprehension"

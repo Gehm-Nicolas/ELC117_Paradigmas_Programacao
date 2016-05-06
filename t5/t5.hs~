@@ -82,11 +82,15 @@ crossProduct lis_a lis_b = pairWithAll (head(lis_a)) lis_b ++ crossProduct (tail
 --(x,y,largura,altura)
 genRects :: Int -> (Int,Int) -> [(Float,Float,Float,Float)]
 genRects 0 _ = []
-genRects num (a,b) = (pto_x,pto_y,larg,alt):genRects (num-1) (a,b)
+genRects num (a,b) = [(x + largura*n,y,largura,altura) | n <- [0..(n-1)] ]
 	where x = fromIntegral a
 	      y = fromIntegral b
-	      n = fromIntegral num	
-	      pto_x = 
-	      pto_y =
-	      larg  =
-	      alt   =
+	      n = fromIntegral num
+	      altura = 5.0
+	      largura = 5.0	
+	      --calc_x = (x + largura*n)
+
+--9) Recebe uma LISTA de tuplas e, decompondo cada uma delas, gera-se uma TUPLA de listas, RECURSIVAMENTE
+--func :: [(x,y)] -> ([x],[y])
+--func [] = ([],[])
+--func (x:xs) =  
