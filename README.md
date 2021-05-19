@@ -1,7 +1,7 @@
 # ELC117_Paradigmas_Programacao
 Repositório criado para a disciplina de Paradigmas de Programação
 
-##Trabalhos
+## Trabalhos
  - t1: Lista de Ganhadoras em C
  - t2: [Programação funcional em Haskell](/t2)
  - t3: [Mais exercícios de programação funcional em Haskell](/t3)
